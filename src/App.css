@@ -6,21 +6,21 @@ header h1 { margin: 0; font-size: 1.4rem; }
 nav { display: flex; gap: 10px; }
 button { border: 0; border-radius: 8px; padding: 10px 15px; background: #e3eee5; color: #173b2b; cursor: pointer; font-weight: 600; }
 button:disabled { opacity: .55; cursor: default; }
-.hero { max-width: 1100px; margin: auto; padding: 90px 7%; display: flex; align-items: center; gap: 50px; }
-.hero h2 { font-size: 4rem; line-height: 1.05; margin: 10px 0; }
+.hero { min-height: 620px; display: flex; align-items: center; padding: 80px 8%; background-image: linear-gradient(90deg, rgba(245,248,242,.97), rgba(245,248,242,.65)), url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1600'); background-size: cover; background-position: center; }
+.hero-content { max-width: 600px; }
+.hero h2 { font-size: 3.8rem; line-height: 1.05; margin: 10px 0; }
 .hero p { font-size: 1.15rem; max-width: 520px; }
 .eyebrow { color: #4c8a65; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
-.hero-art { font-size: 12rem; background: #dcebdc; border-radius: 50%; padding: 30px; }
-main { max-width: 1100px; margin: auto; padding: 45px 7%; }
+main { max-width: 1200px; margin: auto; padding: 45px 7%; }
 main > h2 { font-size: 2.4rem; }
 section { margin: 35px 0; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card { background: white; border-radius: 16px; padding: 18px; box-shadow: 0 3px 15px #173b2b18; }
-.plant { height: 120px; display: grid; place-items: center; background: #edf5ec; border-radius: 12px; font-size: 4rem; }
+.plant-image { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; }
 .card h4 { margin: 15px 0 5px; font-size: 1.2rem; }
 .card button, .primary { background: #246b45; color: white; }
-.cart-item { display: flex; align-items: center; gap: 14px; background: white; padding: 15px; margin: 12px 0; border-radius: 12px; }
-.cart-item .thumb { font-size: 2rem; }
+.cart-item { display: flex; align-items: center; gap: 14px; background: white; padding: 15px; margin: 12px 0; border-radius: 12px; flex-wrap: wrap; }
+.cart-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; }
 .cart-item strong { flex: 1; }
 footer { text-align: center; padding: 25px; color: #6c8274; }
-@media (max-width: 700px) { .hero { padding: 45px 7%; display: block; } .hero h2 { font-size: 3rem; } .hero-art { font-size: 6rem; margin-top: 30px; width: max-content; } .grid { grid-template-columns: 1fr 1fr; } .cart-item { flex-wrap: wrap; } }
+@media (max-width: 700px) { .hero h2 { font-size: 2.8rem; } .grid { grid-template-columns: 1fr 1fr; } }

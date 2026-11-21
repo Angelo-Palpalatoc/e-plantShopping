@@ -8,13 +8,12 @@ export default function App() {
   const [page, setPage] = useState('home');
   const cart = useSelector((state) => state.cart);
   const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
     <div className="app">
       <header>
         <h1>🌱 Paradise Nursery</h1>
-        <nav>
+        <nav aria-label="Main navigation">
           <button onClick={() => setPage('home')}>Home</button>
           <button onClick={() => setPage('plants')}>Plants</button>
           <button onClick={() => setPage('cart')}>Cart ({itemCount})</button>
@@ -23,16 +22,13 @@ export default function App() {
 
       {page === 'home' && (
         <main className="hero">
-          <div>
+          <div className="hero-content">
             <p className="eyebrow">Grown for good days</p>
-            <h2>Bring nature home.</h2>
-            <p>Beautiful houseplants, thoughtfully grown and ready to brighten your space.</p>
-            <button className="primary" onClick={() => setPage('plants')}>
-              Shop plants
-            </button>
+            <h2>Welcome to Paradise Nursery</h2>
+            <p>Bring beautiful, responsibly grown houseplants into your home.</p>
+            <button className="primary" onClick={() => setPage('plants')}>Get Started</button>
             <AboutUs />
           </div>
-          <div className="hero-art">🌿</div>
         </main>
       )}
 
@@ -45,19 +41,8 @@ export default function App() {
 
       {page === 'cart' && (
         <main>
-          <h2>Your cart</h2>
-          {cart.length === 0 ? (
-            <p>Your cart is empty.</p>
-          ) : (
-            <>
-              {cart.map((item) => <CartItem key={item.id} item={item} />)}
-              <h3>Total: ${total.toFixed(2)}</h3>
-              <button className="primary" onClick={() => alert('Coming Soon')}>
-                Checkout
-              </button>
-              <button onClick={() => setPage('plants')}>Continue shopping</button>
-            </>
-          )}
+          <h2>Shopping Cart</h2>
+          <CartItem onContinueShopping={() => setPage('plants')} />
         </main>
       )}
 
